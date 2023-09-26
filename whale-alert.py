@@ -99,10 +99,14 @@ while True:
                                     else:
                                         sub_hash.append(hash_v)
                                         hash_now = str(sub_df['hash_value'][j])
-                                        msg_url = 'https://www.oklink.com/cn/btc/tx/' + hash_now
-                                        content_2 =  "<a href=%s>点击链接查看转账详情</a>"%(msg_url)
-                                        content_1 = '\n \
-                                        【警报 — %s】 \n \
+                                    if blockchain == 'ethereum':
+                                        msg_url = 'https://www.oklink.com/cn/eth/tx/' + hash_now
+                                    else:
+                                        msg_url = 'https://www.oklink.com/cn/trx/tx/' + hash_now
+
+                                    content_2 =  "<a href=%s>点击链接查看转账详情</a>"%(msg_url)
+                                    content_1 = '\n \
+                                    【警报 — %s】 \n \
 %s链上地址%s在北京时间%s向%s交易所地址%s转入了%s万个%s,目前市值为%s万美元。'%(alert,blockchain,from_address_now,localtime_now,to_address_owner_now,to_address_now,amount_now,currecy_now,amount_usd_now)
                                     #推送tele
                                     bot.sendMessage(chat_id='-1001975215255', text=content_1,message_thread_id=3)
