@@ -10,7 +10,7 @@ whale=WhaleAlert()# Specify a single transaction from the last 10 minutes>>>
 import telegram
 from telegram import ParseMode
 bot = telegram.Bot(token='6343206405:AAHkaKIXCMvif0yqkzvTYWasYPEIsTmImgQ')
-
+api_key='I38poa9dJRyy8qK8fG2KmSGicjXLjlLU'
 s = 0
 df = pd.DataFrame()
 # transfer，mint
